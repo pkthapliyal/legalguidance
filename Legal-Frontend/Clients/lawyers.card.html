@@ -387,9 +387,9 @@
                         <i style="font-size:20px; margin-left:20px;color:orange" class="fa">&#xf05a;</i>
                     </div>
                     <div class="dropdown shoe-types-dropdown">
-                        <ul>${finalArray.map((area) =>
-            `<li>${area}</li><br/>`
-        ).join("")}
+                        <ul>${finalArray.map((area) => {
+            return `<li>${area}</li><br/>`
+        }).join("")}
                         </ul>
                     </div>
                 </div>
