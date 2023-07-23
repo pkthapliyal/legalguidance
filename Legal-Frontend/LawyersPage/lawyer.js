@@ -1,4 +1,4 @@
-let url = "https://legal-guidance.onrender.com/"
+let url = 'https://legal-guidance-laws.onrender.com/'
 let user = JSON.parse(localStorage.getItem("auth"));
 const lawyerId = localStorage.getItem("lawyerId");
 document.addEventListener("DOMContentLoaded", function () {

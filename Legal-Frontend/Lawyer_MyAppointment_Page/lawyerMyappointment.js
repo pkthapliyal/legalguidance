@@ -1,4 +1,4 @@
-let url = "https://legal-guidance.onrender.com/"
+let url = 'https://legal-guidance-laws.onrender.com/'
 let lawyerId = JSON.parse(localStorage.getItem("auth")).userData._id;
 
 async function getAppointments() {

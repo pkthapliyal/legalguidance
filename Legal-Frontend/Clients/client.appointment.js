@@ -6,7 +6,7 @@ function togglemenu() {
     navigation.classList.toggle('active');
 };
 
-const url = "https://legal-guidance.onrender.com/"
+const url = 'https://legal-guidance-laws.onrender.com/'
 let lawyerId = JSON.parse(localStorage.getItem('lawyerId'))
 let clientId = JSON.parse(localStorage.getItem("auth")).userData._id
 

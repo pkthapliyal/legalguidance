@@ -46,7 +46,7 @@ signUpForm.addEventListener("submit", function (e) {
     }
 });
 // let url = "https://legal-guidance.onrender.com/"
-let url = "http://localhost:8080/"
+let url = 'https://legal-guidance-laws.onrender.com/'
 async function signup_fetch(obj) {
     try {
         let responce = await fetch(`${url}user/register`, {

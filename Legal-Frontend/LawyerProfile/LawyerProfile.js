@@ -1,4 +1,4 @@
-let url = "https://legal-guidance.onrender.com/"
+let url = 'https://legal-guidance-laws.onrender.com/'
 let user = JSON.parse(localStorage.getItem("auth"));
 const urlParams = new URLSearchParams(window.location.search);
 let param = urlParams.get("lawyerid");

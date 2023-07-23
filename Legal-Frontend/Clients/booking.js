@@ -1,5 +1,5 @@
 //  Fetch the data of individual lawyer for slots
-let url = "https://legal-guidance.onrender.com/"
+let url = 'https://legal-guidance-laws.onrender.com/'
 let slotsDiv = document.getElementById("slots")
 let slotTime;
 var slotDate;
