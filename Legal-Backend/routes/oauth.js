@@ -55,14 +55,14 @@ router.get("/auth/google/callback",
             const token = jwt.sign({ userId: userData._id }, process.env.JWT_SECRET, {
                 expiresIn: "24h",
             });
-            res.redirect(`http://127.0.0.1:5500/Back-end/routes/loggedIn.html?userId=${userData._id}`)
+            res.redirect(`https://legal-testing.netlify.app/authetication/loggedin.html?userId=${userData._id}`)
             // res.redirect(`http://127.0.0.1:5500/Back-end/routes/roles.html?userId=${userData._id}&token=${token}&lawyer=${lawyer}&userData=${userData}`)
         }
         else {
             let user = { email, name, password: uuidv4(), role: "client" }
             const userData = await UserModel(user)
             await userData.save()
-            res.redirect(`http://127.0.0.1:5500/Back-end/routes/roles.html?userId=${userData._id}`)
+            res.redirect(`https://legal-testing.netlify.app/authetication/roles.html?userId=${userData._id}`)
             // res.sendFile(__dirname + "/dashboard.html")
         }
     }
