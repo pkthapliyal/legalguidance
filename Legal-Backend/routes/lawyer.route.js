@@ -47,7 +47,7 @@ lawyerRoute.post("/add", auth, async (req, res) => {
     res.status(200).send(lawyer);
   } catch (error) {
     console.log(error);
-    res.status(401).send(error);
+    res.status(401).send({ error: error });
   }
 });
 //  All lawyers with profile

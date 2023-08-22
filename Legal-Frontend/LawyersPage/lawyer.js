@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
       description: description,
       image: await toBase64(image),
     };
-    console.log("---------", formData);
-    const response = await fetch(`${url}lawyer/add`, {
+
+    fetch(`${url}lawyer/add`, {
       method: "POST",
       mode: "cors",
       headers: {
@@ -44,9 +44,16 @@ document.addEventListener("DOMContentLoaded", function () {
         Authorization: `Bearer ${user.token}`,
       },
       body: JSON.stringify(formData),
-    });
-    const responseData = await response.json();
-    localStorage.setItem("lawyerId", responseData._id);
+    }).then((res) => {
+      return res.json()
+    }).then((responseData) => {
+      console.log(responseData)
+      localStorage.setItem("lawyerId", responseData._id);
+    }).catch((err) => {
+      console.log(err)
+    })
+
+
     // console.log("Response:", responseData);
     window.location.href = `../LawyerProfile/LawyerProfile.html?lawyerid=${responseData._id}`;
   });
