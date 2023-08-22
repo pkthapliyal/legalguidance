@@ -12,7 +12,7 @@ const jwt = require("jsonwebtoken");
 passport.use(new GoogleStrategy({
     clientID: '674308305530-38i4dioh3b72dqfukb4jpudf8uj7bs96.apps.googleusercontent.com',
     clientSecret: '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',
-    callbackURL: "http://localhost:8080/auth/google/callback"
+    callbackURL: "https://legal-guidance-laws.onrender.com/auth/google/callback"
 },
     function (googleAccessToken, refreshToken, profile, cb) {
         // return cb(null, profile);
