@@ -49,13 +49,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }).then((responseData) => {
       console.log(responseData)
       localStorage.setItem("lawyerId", responseData._id);
+      window.location.href = `../LawyerProfile/LawyerProfile.html?lawyerid=${responseData._id}`;
     }).catch((err) => {
       console.log(err)
     })
 
 
     // console.log("Response:", responseData);
-    window.location.href = `../LawyerProfile/LawyerProfile.html?lawyerid=${responseData._id}`;
+
   });
   const toBase64 = (file) =>
     new Promise((resolve, reject) => {
