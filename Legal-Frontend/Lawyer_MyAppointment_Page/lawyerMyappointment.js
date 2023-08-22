@@ -1,5 +1,6 @@
 let url = 'https://legal-guidance-laws.onrender.com/'
 let lawyerId = JSON.parse(localStorage.getItem("auth")).userData._id;
+let LawyerId = JSON.parse(localStorage.getItem("auth")).lawyer._id;
 
 async function getAppointments() {
   try {
@@ -72,5 +73,5 @@ logoutBtn.addEventListener("click", async () => {
   window.location.href = "../loginSignup.html";
 });
 profile.addEventListener("click", () => {
-  window.location.href = `../LawyerProfile/LawyerProfile.html?lawyerid=${lawyerId}`;
+  window.location.href = `../LawyerProfile/LawyerProfile.html?lawyerid=${LawyerId}`;
 });
