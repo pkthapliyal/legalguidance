@@ -15,19 +15,8 @@ lawyerRoute.post("/add", auth, async (req, res) => {
       userId,
     });
     if (existingLawyer) {
-      lawyer = await LawyerModel.findByIdAndUpdate(
-        existingLawyer._id,
-        {
-          location,
-          specialization,
-          practiceAreas,
-          image,
-          description,
-        },
-        {
-          new: true,
-        }
-      );
+      lawyer = await LawyerModel.findByIdAndUpdate(existingLawyer._id, { location, specialization, practiceAreas, image, description }, { new: true });
+      console.log("lwyer------>", lawyer)
     } else {
       lawyer = new LawyerModel({
         userId,
@@ -42,6 +31,7 @@ lawyerRoute.post("/add", auth, async (req, res) => {
         image,
         description,
       });
+      console.log(lawyer)
       await lawyer.save();
     }
     res.status(200).send(lawyer);
