@@ -55,7 +55,7 @@ router.get("/auth/google/callback",
             const token = jwt.sign({ userId: userData._id }, process.env.JWT_SECRET, {
                 expiresIn: "24h",
             });
-            console.log("userdata------->>", userData)
+            // console.log("userdata------->>", userData)
             res.redirect(`https://legal-testing.netlify.app/authetication/loggedin.html?userId=${userData._id}`)
             // res.redirect(`http://127.0.0.1:5500/Back-end/routes/roles.html?userId=${userData._id}&token=${token}&lawyer=${lawyer}&userData=${userData}`)
         }
