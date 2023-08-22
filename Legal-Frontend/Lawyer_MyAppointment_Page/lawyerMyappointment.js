@@ -72,5 +72,5 @@ logoutBtn.addEventListener("click", async () => {
   window.location.href = "../loginSignup.html";
 });
 profile.addEventListener("click", () => {
-  window.location.href = `../LawyerProfile/LawyerProfile.html?lawyerId=${lawyerId}`;
+  window.location.href = `../LawyerProfile/LawyerProfile.html?lawyerid=${lawyerId}`;
 });
