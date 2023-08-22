@@ -1,5 +1,5 @@
 let url = 'https://legal-guidance-laws.onrender.com/'
-let lawyerId = JSON.parse(localStorage.getItem("auth")).userData.userId;
+let lawyerId = JSON.parse(localStorage.getItem("auth")).userData._id;
 
 async function getAppointments() {
   try {
