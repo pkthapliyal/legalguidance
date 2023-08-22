@@ -78,10 +78,11 @@
         let role = event.target.id
         console.log(userId)
 
-        let url = "https://legal-guidance-laws.onrender.com"
+        let url = "https://legal-guidance-laws.onrender.com/"
 
         fetch(`${url}sendToken/${userId}`, {
             method: "PUT",
+            mode: "cors",
             headers: {
                 "content-type": "application/json"
             },

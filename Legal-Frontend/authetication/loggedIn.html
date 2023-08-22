@@ -21,9 +21,10 @@
         // console.log(JSON.stringify(ans))
         // localStorage.setItem("auth", JSON.stringify(ans));
         console.log(userId)
-        let url = "https://legal-guidance-laws.onrender.com"
+        let url = "https://legal-guidance-laws.onrender.com/"
         fetch(`${url}sendToken/${userId}`, {
             method: "GET",
+            mode: "cors",
             headers: {
                 "content-type": "application/json"
             }
@@ -33,9 +34,9 @@
             }).then((data) => {
                 console.log(data)
                 if (data.userData.role === "client") {
-                    window.location = "http://127.0.0.1:5500/Front-end/Clients/lawyers.card.html"
+                    window.location = "../Clients/lawyers.card.html"
                 } else if (data.userData.role === "lawyer") {
-                    window.location = "http://127.0.0.1:5500/Front-end/LawyersPage/lawyer.html"
+                    window.location = "../LawyersPage/lawyer.html"
                 }
                 localStorage.setItem("auth", JSON.stringify(data))
 
