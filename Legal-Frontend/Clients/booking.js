@@ -80,6 +80,7 @@ function getDate(date, month, year) {
 
     fetch(`${url}appointment/${lawyerId}`, {
         method: "GET",
+        mode: "cors",
         headers: {
             "content-type": "application/json"
         }
@@ -184,6 +185,7 @@ contactForm.addEventListener('submit', function (event) {
     console.log('Form Data:', formData);
     fetch(`${url}appointment/`, {
         method: "POST",
+        mode: "cors",
         headers: {
             "content-type": "application/json"
         },

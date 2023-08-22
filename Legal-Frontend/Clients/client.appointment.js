@@ -109,6 +109,7 @@ let logoutBtn = document.getElementById("logoutBtn")
 logoutBtn.addEventListener("click", async () => {
     const response = await fetch(`${url}user/logout`, {
         method: "POST",
+        mode: "cors",
         headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${user.token}`,

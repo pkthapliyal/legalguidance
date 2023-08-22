@@ -3,7 +3,12 @@ let lawyerId = JSON.parse(localStorage.getItem("auth")).userData._id;
 
 async function getAppointments() {
   try {
-    const response = await fetch(`${url}appointment/${lawyerId}`);
+    const response = await fetch(`${url}appointment/${lawyerId}`, {
+      mode: "cors",
+      headers: {
+        "content-type": "application/json"
+      }
+    });
     const data = await response.json();
     console.log(data);
     displayAppointments(data.data.appointments);
@@ -55,6 +60,7 @@ let user = JSON.parse(localStorage.getItem("auth"));
 logoutBtn.addEventListener("click", async () => {
   const response = await fetch(`${url}user/logout`, {
     method: "POST",
+    mode: "cors",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${user.token}`,

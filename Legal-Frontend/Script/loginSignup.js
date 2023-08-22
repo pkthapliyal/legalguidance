@@ -51,6 +51,7 @@ async function signup_fetch(obj) {
     try {
         let responce = await fetch(`${url}user/register`, {
             method: "POST",
+            mode: "cors",
             headers: {
                 "Content-Type": "Application/json",
             },
@@ -84,6 +85,7 @@ async function loginFetch(obj) {
     try {
         let responce = await fetch(`${url}user/login`, {
             method: "POST",
+            mode: "cors",
             headers: {
                 "Content-Type": "Application/json",
             },

@@ -6,6 +6,7 @@ console.log(param);
 window.onload = async () => {
   const response = await fetch(`${url}lawyer/${param}`, {
     method: "GET",
+    mode: "cors",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${user.token}`,
@@ -66,6 +67,7 @@ appointmentBtn.addEventListener("click", () => {
 logoutBtn.addEventListener("click", async () => {
   const response = await fetch(`${url}user/logout`, {
     method: "POST",
+    mode: "cors",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${user.token}`,

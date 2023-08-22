@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("---------", formData);
     const response = await fetch(`${url}lawyer/add`, {
       method: "POST",
+      mode: "cors",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
