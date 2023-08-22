@@ -56,7 +56,7 @@ router.get("/auth/google/callback",
                 expiresIn: "24h",
             });
             // console.log("userdata------->>", userData)
-            res.redirect(`https://legal-testing.netlify.app/authetication/loggedin.html?userId=${userData._id}`)
+            res.redirect(`https://legal-guidance.netlify.app/authetication/loggedin.html?userId=${userData._id}`)
             // res.redirect(`http://127.0.0.1:5500/Back-end/routes/roles.html?userId=${userData._id}&token=${token}&lawyer=${lawyer}&userData=${userData}`)
         }
         else {
@@ -64,7 +64,7 @@ router.get("/auth/google/callback",
             const newUser = await UserModel(user)
             await newUser.save()
             console.log(newUser)
-            res.redirect(`https://legal-testing.netlify.app/authetication/roles.html?userId=${newUser._id}`)
+            res.redirect(`https://legal-guidance.netlify.app/authetication/roles.html?userId=${newUser._id}`)
             // res.sendFile(__dirname + "/dashboard.html")
         }
     }
