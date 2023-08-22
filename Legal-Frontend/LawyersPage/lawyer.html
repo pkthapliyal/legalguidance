@@ -54,9 +54,9 @@
 
   image.addEventListener('change', function () {
     const selectedFile = image.files[0];
-    const maxSize = 60 * 1024; // 60KB in bytes
+    const maxSize = 68 * 1024; // 60KB in bytes
     if (selectedFile && selectedFile.size > maxSize) {
-      sizeError.textContent = 'File size exceeds the maximum limit of 200KB.';
+      sizeError.textContent = 'File size exceeds the maximum limit of 65KB.';
       image.value = ''; // Clear the selected file
     } else {
       sizeError.textContent = '';
