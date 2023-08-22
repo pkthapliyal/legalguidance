@@ -28,7 +28,7 @@
       <input type="text" id="location" name="location" required />
       <label for="specialization">Specialization:</label>
       <input type="text" id="specialization" name="specialization" required />
-      <label for="image">Image:(less then 200kb)</label>
+      <label for="image">Image:(less then 65kb)</label>
       <input type="file" id="image" name="image" accept="image/*" size="200000" required />
       <span id="size-error" style="color: red;"></span>
       <div id="output"></div>
@@ -54,8 +54,7 @@
 
   image.addEventListener('change', function () {
     const selectedFile = image.files[0];
-    const maxSize = 200 * 1024; // 200KB in bytes
-
+    const maxSize = 60 * 1024; // 60KB in bytes
     if (selectedFile && selectedFile.size > maxSize) {
       sizeError.textContent = 'File size exceeds the maximum limit of 200KB.';
       image.value = ''; // Clear the selected file
