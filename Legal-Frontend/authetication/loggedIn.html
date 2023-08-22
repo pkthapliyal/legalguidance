@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const params = new URLSearchParams(window.location.search);
+        userId = params.get('userId');
+        // userData = params.get("userData");
+        // token = params.get("token")
+        // lawyer = params.get("lawyer")
+        // let ans = { token, lawyer, userData }
+        // console.log(JSON.stringify(ans))
+        // localStorage.setItem("auth", JSON.stringify(ans));
+        console.log(userId)
+        let url = "https://legal-guidance-laws.onrender.com"
+        fetch(`${url}sendToken/${userId}`, {
+            method: "GET",
+            headers: {
+                "content-type": "application/json"
+            }
+        })
+            .then((res) => {
+                return res.json();
+            }).then((data) => {
+                console.log(data)
+                if (data.userData.role === "client") {
+                    window.location = "http://127.0.0.1:5500/Front-end/Clients/lawyers.card.html"
+                } else if (data.userData.role === "lawyer") {
+                    window.location = "http://127.0.0.1:5500/Front-end/LawyersPage/lawyer.html"
+                }
+                localStorage.setItem("auth", JSON.stringify(data))
+
+            }).catch((err) => {
+                console.log(JSON.stringify(err))
+            })
+        console.log("fetching")
+
+    });
+
+
+</script>
+
+</html>
