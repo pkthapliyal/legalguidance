@@ -84,9 +84,11 @@ router.get("/sendToken/:userId", async (req, res) => {
 
 })
 // Update the roles 
-router.put("/sendToken/:userId", async (req, res) => {
+router.patch("/sendToken/:userId", async (req, res) => {
 
-    const userData = await UserModel.findByIdAndUpdate({ _id: req.params.userId }, { ...req.body })
+    await UserModel.findByIdAndUpdate({ _id: req.params.userId }, { ...req.body });
+    const userData = await UserModel.findOne({ _id: req.params.userId })
+    console.log("Patch method--->>>>", userData)
     const token = jwt.sign({ userId: userData._id }, process.env.JWT_SECRET, {
         expiresIn: "24h",
     });
