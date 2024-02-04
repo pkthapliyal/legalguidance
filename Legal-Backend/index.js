@@ -14,6 +14,10 @@ const { lawyerRoute } = require("./routes/lawyer.route");
 const { router } = require("./routes/oauth")
 const { appointRoute } = require("./routes/appointment.route")
 
+app.get("/",(req,res)=>{
+res.send("home")
+})
+
 app.use(session({ secret: "cats" }));
 app.use(passport.initialize());
 app.use(passport.session());
